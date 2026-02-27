@@ -1,0 +1,37 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pip --version)",
+      "Bash(python -m pip --version)",
+      "Bash(python3 -m pip --version)",
+      "Bash(pip3 --version)",
+      "Bash(python -m pip install mkdocs-material python-docx Pillow)",
+      "Bash(python extract_docx.py)",
+      "Bash(python extract_docx2.py)",
+      "Bash(python -m mkdocs build)",
+      "Bash(python -m mkdocs --version)",
+      "Bash(pgrep -fl \"mkdocs serve\")",
+      "Bash(python3 -c \":*)",
+      "Bash(pkill -f \"mkdocs serve\")",
+      "Bash(pgrep -fl \"mkdocs\")",
+      "Bash(netstat -ano)",
+      "Bash(taskkill /F /PID 47432 /PID 52236 /PID 9152 /PID 8720 /PID 58172)",
+      "Bash(for pid in 47432 52236 9152 8720 58172)",
+      "Bash(do taskkill //F //PID $pid)",
+      "Bash(done)",
+      "Bash(taskkill //F //PID 32848)",
+      "Bash(git add mkdocs.yml docs/ .gitignore)",
+      "Bash(git commit -m \"Initial commit for PF_Manager Docs\")",
+      "Bash(git push -u origin main)",
+      "Bash(gh auth status)",
+      "Bash(cmdkey /list)",
+      "Bash(git credential-manager list)",
+      "Bash(git config --global --list)",
+      "Bash(git remote set-url origin \"https://sekaitoushichizunote-hue@github.com/sekaitoushichizunote-hue/pf-manager-docs.git\")",
+      "Bash(printf \"protocol=https\\\\nhost=github.com\\\\n\")",
+      "Bash(git credential reject)",
+      "Bash(printf \"protocol=https\\\\nhost=github.com\\\\nusername=akku4800-dev\\\\n\")",
+      "Bash(python -m mkdocs gh-deploy --force)"
+    ]
+  }
+}
