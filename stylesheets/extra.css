@@ -1,0 +1,278 @@
+/* ============================================================
+   PF_Manager Docs — Custom Stylesheet
+   Supabase / Next.js inspired SaaS aesthetic
+   ============================================================ */
+
+/* ---------- Global Variables ---------- */
+
+/* ライトモード（default）の値をデフォルトとして定義 */
+:root {
+  --pf-accent:      #00a896;
+  --pf-accent-dim:  rgba(0, 168, 150, 0.12);
+  --pf-border:      rgba(0, 0, 0, 0.12);
+  --pf-card-bg:     #f0faf9;          /* 視認できるライトミント */
+  --pf-card-border: rgba(0, 0, 0, 0.12);
+  --pf-radius:      10px;
+  --pf-shadow:      0 4px 16px rgba(0, 0, 0, 0.08);
+  /* Hero専用 */
+  --pf-hero-bg:     linear-gradient(135deg, rgba(0, 168, 150, 0.1) 0%, rgba(0, 188, 212, 0.07) 100%);
+  --pf-hero-border: rgba(0, 168, 150, 0.5);
+  --pf-hero-title:  #0a2e29;          /* 濃いダークグリーン */
+  --pf-hero-sub:    #2a4a45;
+}
+
+/* ダークモード専用の上書き */
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color: #0f1117;
+  --md-default-fg-color: #e2e8f0;
+  --md-primary-fg-color: #00d4aa;
+  --md-accent-fg-color:  #22d3ee;
+  --md-code-bg-color:    #1a1f2e;
+  --md-typeset-a-color:  #00d4aa;
+  /* ダークモード用の上書き */
+  --pf-accent:      #00d4aa;
+  --pf-accent-dim:  rgba(0, 212, 170, 0.12);
+  --pf-border:      rgba(255, 255, 255, 0.08);
+  --pf-card-bg:     rgba(255, 255, 255, 0.05);
+  --pf-card-border: rgba(255, 255, 255, 0.08);
+  --pf-shadow:      0 4px 24px rgba(0, 0, 0, 0.4);
+  /* Hero専用（ダーク） */
+  --pf-hero-bg:     linear-gradient(135deg, rgba(0, 212, 170, 0.08) 0%, rgba(34, 211, 238, 0.05) 100%);
+  --pf-hero-border: rgba(0, 212, 170, 0.3);
+  --pf-hero-title:  #e2e8f0;
+  --pf-hero-sub:    #94a3b8;
+}
+
+/* ---------- Site Header ---------- */
+.md-header {
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--pf-border);
+  box-shadow: none;
+}
+
+/* ダークモード時のみヘッダーを暗色に */
+[data-md-color-scheme="slate"] .md-header {
+  background: rgba(15, 17, 23, 0.92) !important;
+}
+
+.md-header__title {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  font-size: 1.05rem;
+}
+
+/* ---------- Navigation Sidebar ---------- */
+.md-nav__title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--pf-accent) !important;
+  padding: 0.6rem 0.8rem 0.3rem;
+}
+
+.md-nav__link--active {
+  color: var(--pf-accent) !important;
+  font-weight: 600;
+}
+
+.md-nav__link:hover {
+  color: var(--pf-accent) !important;
+}
+
+/* ---------- Content Area ---------- */
+.md-content__inner {
+  max-width: 860px;
+}
+
+/* ---------- Headings ---------- */
+.md-typeset h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  border-bottom: 2px solid var(--pf-accent);
+  padding-bottom: 0.4em;
+  margin-bottom: 1.2em;
+}
+
+.md-typeset h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--pf-accent);
+  border-left: 3px solid var(--pf-accent);
+  padding-left: 0.75em;
+  margin-top: 2.4em;
+}
+
+.md-typeset h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 1.8em;
+}
+
+/* ---------- Images (Screenshots) ---------- */
+.md-typeset img {
+  border-radius: var(--pf-radius);
+  border: 1px solid var(--pf-border);
+  box-shadow: var(--pf-shadow);
+  display: block;
+  margin: 1.6em auto;
+  max-width: 100%;
+}
+
+/* ---------- Admonitions ---------- */
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: var(--pf-radius);
+  border: 1px solid var(--pf-border);
+  background: var(--pf-card-bg);
+}
+
+/* ---------- Feature Cards ---------- */
+.pf-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+/* div版・a版どちらも同じ見た目 */
+.pf-card {
+  display: block;
+  background: var(--pf-card-bg);
+  border: 1px solid var(--pf-card-border);
+  border-radius: var(--pf-radius);
+  padding: 1.2rem 1.4rem;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+.pf-card:hover {
+  border-color: var(--pf-accent);
+  box-shadow: 0 0 0 1px var(--pf-accent), var(--pf-shadow);
+  transform: translateY(-2px);
+}
+
+.pf-card-icon {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.pf-card h4 {
+  margin: 0.3rem 0 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--pf-accent);
+}
+
+.pf-card p {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--md-default-fg-color);
+  opacity: 0.75;
+}
+
+/* ---------- Badge / Tag ---------- */
+.pf-badge {
+  display: inline-block;
+  background: var(--pf-accent-dim);
+  color: var(--pf-accent);
+  border: 1px solid var(--pf-accent);
+  border-radius: 4px;
+  padding: 0.1em 0.55em;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  vertical-align: middle;
+  margin-left: 0.4em;
+}
+
+/* ---------- Step Number ---------- */
+.pf-step {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.6em;
+  height: 1.6em;
+  background: var(--pf-accent);
+  color: #0f1117;
+  border-radius: 50%;
+  font-size: 0.8rem;
+  font-weight: 800;
+  margin-right: 0.5em;
+}
+
+/* ---------- Tables ---------- */
+.md-typeset table:not([class]) {
+  border-radius: var(--pf-radius);
+  overflow: hidden;
+  border: 1px solid var(--pf-border);
+}
+
+.md-typeset table:not([class]) th {
+  background: var(--pf-accent-dim);
+  color: var(--pf-accent);
+  font-weight: 700;
+}
+
+/* ---------- Code ---------- */
+.md-typeset code {
+  background: var(--pf-card-bg);
+  border: 1px solid var(--pf-border);
+  border-radius: 4px;
+  font-size: 0.87em;
+  padding: 0.1em 0.4em;
+}
+
+/* ---------- Hero Banner ---------- */
+/* 色は変数経由で自動切り替え。ハードコード色なし */
+.pf-hero {
+  background: var(--pf-hero-bg);
+  border: 1.5px solid var(--pf-hero-border);
+  border-radius: 14px;
+  padding: 2.5rem 2rem;
+  margin: 1.5rem 0 2.5rem;
+  text-align: center;
+}
+
+.pf-hero h2 {
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 0 0.5rem !important;
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--pf-hero-title) !important;
+}
+
+.pf-hero p {
+  font-size: 1rem;
+  max-width: 520px;
+  margin: 0 auto;
+  color: var(--pf-hero-sub);
+  opacity: 1;
+}
+
+/* ---------- Screen Section Divider ---------- */
+.pf-screen-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 3rem 0 1.2rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--pf-border);
+}
+
+.pf-screen-tag {
+  background: var(--pf-accent);
+  color: #0f1117;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 0.2em 0.7em;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
