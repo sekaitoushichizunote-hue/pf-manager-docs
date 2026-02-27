@@ -1,0 +1,78 @@
+site_name: PF_Manager Docs
+site_description: ポートフォリオ管理アプリ PF_Manager 公式ドキュメント
+site_author: あっく
+docs_dir: docs
+site_dir: site
+
+theme:
+  name: material
+  language: ja
+  palette:
+    - scheme: slate
+      primary: teal
+      accent: cyan
+      toggle:
+        icon: material/brightness-4
+        name: ライトモードに切り替え
+    - scheme: default
+      primary: teal
+      accent: cyan
+      toggle:
+        icon: material/brightness-7
+        name: ダークモードに切り替え
+  font:
+    text: Inter
+    code: JetBrains Mono
+  logo: images/logo.svg
+  favicon: images/logo.svg
+  features:
+    - navigation.sections
+    - navigation.tabs
+    - navigation.top
+    - navigation.indexes
+    - navigation.expand
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+    - content.tabs.link
+    - toc.follow
+  icon:
+    repo: fontawesome/brands/github
+
+extra_css:
+  - stylesheets/extra_v2.css
+
+nav:
+  - はじめに: index.md
+  - HOME（メインダッシュボード）: 01_home.md
+  - ANALYTICS（トレード分析）: 02_analytics.md
+  - REPORT（レポート・AI要約）: 03_report.md
+  - HEATMAP（ヒートマップ）: 04_heatmap.md
+  - ADVISOR（AIアドバイザー）: 05_advisor.md
+  - SETTINGS（設定管理）: 06_settings.md
+
+plugins:
+  - search:
+      lang: ja
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/
+  generator: false

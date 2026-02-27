@@ -1,0 +1,7 @@
+site/
+extracted_images/
+extracted_content.txt
+extract_docx.py
+extract_docx2.py
+__pycache__/
+*.pyc
