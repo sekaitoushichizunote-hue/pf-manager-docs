@@ -31,7 +31,12 @@
       "Bash(printf \"protocol=https\\\\nhost=github.com\\\\n\")",
       "Bash(git credential reject)",
       "Bash(printf \"protocol=https\\\\nhost=github.com\\\\nusername=akku4800-dev\\\\n\")",
-      "Bash(python -m mkdocs gh-deploy --force)"
+      "Bash(python -m mkdocs gh-deploy --force)",
+      "Bash(python -c \"import docx; print\\(''python-docx OK''\\)\")",
+      "Bash(python -c \":*)",
+      "Bash(mkdocs build)",
+      "Bash(git commit:*)",
+      "Bash(git push origin main)"
     ]
   }
 }
