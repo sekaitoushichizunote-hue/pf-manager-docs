@@ -48,6 +48,11 @@ note「世界投資地図の描き手」の読者の皆様、いつもありが�
     <h4>SETTINGS</h4>
     <p>設定・データソース管理。APIキーと証券会社の連携設定。</p>
   </a>
+  <a href="07_data_setup/" class="pf-card">
+    <div class="pf-card-icon">🔗</div>
+    <h4>データ連携ガイド</h4>
+    <p>証券会社別のデータインポート手順と初期設定の完全ガイド。</p>
+  </a>
 </div>
 
 ---
